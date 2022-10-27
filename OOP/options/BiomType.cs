@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOP.options
 {
-    internal class BiomType
+    public enum BiomType
     {
+        jungle,
+        forest,
+        deserts
+
     }
 }

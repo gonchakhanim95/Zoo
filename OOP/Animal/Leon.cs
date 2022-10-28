@@ -1,21 +1,23 @@
 ﻿namespace OOP.Animal
 {
-    public class Leon : Animal
+    public class LeonAnimal : AbstractAnimal
     {
-        public Leon(string name)
+        public LeonAnimal(string name)
         {
             Name = "Alex";
             Age = 1;
             _sound = "Roarr";
             Eatings = new string[] { "Meat","Chiken" };
+            IsPredator = true;
         }
 
-        public Leon(string name, int age)
+        public LeonAnimal(string name, int age)
         {
             Name = "Max";
-            Age = 3;
+            Age = age;
             _sound = "Roarr";
             Eatings = new string[] { "Meat", "Chiken" };
+            IsPredator= true;
         }
         
     }

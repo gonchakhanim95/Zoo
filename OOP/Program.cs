@@ -2,10 +2,9 @@
 using OOP.Animal;
 using OOP.options;
 
-Leon leon=new Leon("Max");
-leon.ToSound();
-leon.Eat("Meat",7);
+LeonAnimal leon=new LeonAnimal("Max");
+leon.Eat("Egg",7);
 
-Wolf wolf=new Wolf();
-wolf.ToSound();
+
+WolfAnimal wolf=new WolfAnimal();
 wolf.Eat("Meat",3);

@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOP.options
 {
-    public enum BiomType
+    public enum MessageType
     {
-        Jungle,
-        Forest,
-        Deserts,
-        Savana,
-        Tropic
-
+        Play,
+        Eat,
+        Sleep
     }
 }

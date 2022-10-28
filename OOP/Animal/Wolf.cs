@@ -7,14 +7,15 @@ using OOP.options;
 
 namespace OOP.Animal
 {
-    public class Wolf:Animal
+    public class WolfAnimal:AbstractAnimal
     {
-        public Wolf()
+        public WolfAnimal()
         {
             Name = "Carabin";
-            Biome= BiomType.jungle;
+            Biome= BiomType.Jungle;
             _sound = "AUUU";
             Eatings = new string[] { "Egg","Meat","Chiken" };
+            IsPredator= true;
         }
 
 

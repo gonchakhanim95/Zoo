@@ -2,23 +2,15 @@
 {
     public class LeonAnimal : AbstractAnimal
     {
-        public LeonAnimal(string name)
+        public LeonAnimal(string name,int age):base(name, age)
         {
             Name = "Alex";
-            Age = 1;
+            Age = age;
             _sound = "Roarr";
             Eatings = new string[] { "Meat","Chiken" };
             IsPredator = true;
         }
 
-        public LeonAnimal(string name, int age)
-        {
-            Name = "Max";
-            Age = age;
-            _sound = "Roarr";
-            Eatings = new string[] { "Meat", "Chiken" };
-            IsPredator= true;
-        }
         
     }
 }

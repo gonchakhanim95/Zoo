@@ -3,29 +3,27 @@
 
 namespace OOP.Animal
 {
-    public class WolfAnimal : AbstractAnimal
+    public class Wolf : AbstractAnimal
     {
-        public WolfAnimal(string name, int age) : base(name, age)
+        public Wolf(string name, int age, BiomType biome, double unitToSquare, double maxFood) : base(name, age, biome, unitToSquare, maxFood)
         {
             Name = "Carabin";
             Biome = BiomType.Jungle;
-            _sound = "AUUU";
-            Eatings = new string[] { "Egg", "Meat", "Chiken" };
+            Sound = "AUUU";
+            Menu = new string[] { "Egg", "Meat", "Chiken" };
             IsPredator = true;
-            UnitToSquareMater = 15;
+            Area = 15;
+            Tyype = "Wolf";
+            
         }
 
 
 
-        public override Message ToSound()
+        public override Message ToSound => new Message()
         {
-            return new Message()
-            {
-                Text = $"{Name} makes a sound {_sound} when the moon is full",
-                Name = Name,
-                
-            };
-        }
+            Text = $"{Name} make a sound {Sound} when the full moon"
+        };
+        
     }
 }
 

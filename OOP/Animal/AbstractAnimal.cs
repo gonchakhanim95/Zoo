@@ -6,43 +6,45 @@ namespace OOP.Animal
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public string[] Eatings { get; set; }
-        
+        public string[] Menu { get; set; }
+        public double FoodWeigth { get; set; }
+        public double Appetite { get; set; }
         public double Weight { get; set; }
-        public double UnitToSquareMater { get; set; }
+        public double Area { get; set; }
+        public bool IsPredator { get; set; }
+        public string Tyype { get; protected set; }
         public BiomType Biome { get; protected set; }
-        public bool IsPredator { get; protected set; }
-        
-        protected string _sound;
+        public FoodType FoodType { get; protected set; }
 
-        public AbstractAnimal(string name,int age)
+        protected string Sound;
+
+        public AbstractAnimal(string name, int age, BiomType biome, double unitToSquare, double maxFood)
         {
             Name = name;
             Age = age;
+            Area = unitToSquare;
+            Biome = biome;
         }
 
-    
+
         public void Eat(string eat, int kg)
         {
-            if (Eatings.Contains(eat))
+            string result;
+            if (!Menu.Contains(eat))
             {
-                Console.WriteLine($"{Name} ate {kg} kilogram {eat} pey day");
+                result = $"{Name} refused to {eat}";
             }
-            else
+            else if (Menu.Contains(eat))
             {
                 Console.WriteLine($"{Name} refused to {eat}");
             }
         }
-        public virtual Message ToSound()
+        public virtual Message ToSound => new Message()
         {
-            return new Message()
-            {
-                Text = $"{Name} makes a sound {_sound}",
-                Name = Name,
-                MessageType = MessageType.Play,
-            };
-        }
+            Text = $"{Name} makes a sound {Sound}",
+            Name = Name,
+            MessageType = MessageType.Play,
+        };
 
-       
     }
 }

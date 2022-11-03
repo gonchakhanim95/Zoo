@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP.options
+﻿namespace OOP.options
 {
     public enum BiomType
     {
@@ -14,5 +8,11 @@ namespace OOP.options
         Savana,
         Tropic
 
+    }
+    
+    public enum FoodType
+    {
+        Meat,
+        Grass
     }
 }

@@ -12,7 +12,5 @@ namespace OOP.Animal
             Menu = new string[] { "Meat","Chiken" };
             IsPredator = true;
         }
-
-        
     }
 }

@@ -9,7 +9,6 @@
         Tropic
 
     }
-    
     public enum FoodType
     {
         Meat,

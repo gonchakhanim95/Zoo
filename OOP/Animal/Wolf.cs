@@ -1,6 +1,5 @@
 ﻿using OOP.options;
 
-
 namespace OOP.Animal
 {
     public class Wolf : AbstractAnimal
@@ -16,8 +15,6 @@ namespace OOP.Animal
             Tyype = "Wolf";
             
         }
-
-
 
         public override Message ToSound => new Message()
         {

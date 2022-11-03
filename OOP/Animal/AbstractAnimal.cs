@@ -26,25 +26,29 @@ namespace OOP.Animal
             Biome = biome;
         }
 
-
-        public void Eat(string eat, int kg)
+        public virtual string Feed(string eat, double foodWeigth)
         {
             string result;
             if (!Menu.Contains(eat))
             {
                 result = $"{Name} refused to {eat}";
             }
-            else if (Menu.Contains(eat))
+            else if (foodWeigth>Appetite)
             {
-                Console.WriteLine($"{Name} refused to {eat}");
+                result = $"{foodWeigth} kg is too much for {Name}";
             }
+            else
+            {
+                result = $"{Name} ate {foodWeigth} kq of {eat};
+            }
+            return result;
         }
+        
         public virtual Message ToSound => new Message()
         {
             Text = $"{Name} makes a sound {Sound}",
             Name = Name,
             MessageType = MessageType.Play,
-        };
-
+        }; 
     }
 }

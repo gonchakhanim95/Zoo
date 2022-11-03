@@ -10,14 +10,13 @@ namespace OOP.options
         public int FilledArea { get; set; }
         public BiomType Biome { get; set; }
         public FoodType FoodType { get; set; }
-
         public List<AbstractAnimal> Animals { get; set; } = new List<AbstractAnimal>();
         
         public Aviarie(string name, int area, BiomType biome)
         {
             Name = name;
             Area = area;
-            Biome = biome;
+            Biome = biome; 
         }
 
         public string AddAnimal(AbstractAnimal animal)
@@ -25,15 +24,15 @@ namespace OOP.options
             StringBuilder result = new StringBuilder();
             if (Biome != animal.Biome)
             {
-                result.Append($" {Name} don't added in aviaries\n");
+                result.Append($"{Name} don't added in aviaries\n");
             }
             if (FoodType != animal.FoodType)
             {
-                result.Append("");
+                result.Append("does not fit the type of animal\n");
             }
             if (Area - FilledArea < animal.Area)
             {
-                result.Append("");
+                result.Append($"for {Name} there was not enough space\n");
             }
             if (result.Length == 0)
             {
@@ -42,6 +41,4 @@ namespace OOP.options
             return result.ToString();
         }
     }
-
-
 }

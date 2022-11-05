@@ -4,7 +4,7 @@ namespace OOP.Animal
 {
     public class Wolf : AbstractAnimal
     {
-        public Wolf(string name, int age, BiomType biome, double unitToSquare, double maxFood) : base(name, age, biome, unitToSquare, maxFood)
+        public Wolf(string name, int age) : base(name, age)
         {
             Name = "Carabin";
             Biome = BiomType.Jungle;

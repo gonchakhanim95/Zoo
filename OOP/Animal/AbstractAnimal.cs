@@ -13,17 +13,17 @@ namespace OOP.Animal
         public double Area { get; set; }
         public bool IsPredator { get; set; }
         public string Tyype { get; protected set; }
-        public BiomType Biome { get; protected set; }
+        public List<AbstractAnimal> Animals { get; set; }
+        public BiomType Biome { get; set; }
         public FoodType FoodType { get; protected set; }
 
         protected string Sound;
 
-        public AbstractAnimal(string name, int age, BiomType biome, double unitToSquare, double maxFood)
+        public AbstractAnimal(string name, int age)
         {
             Name = name;
             Age = age;
-            Area = unitToSquare;
-            Biome = biome;
+            Animals = new List<AbstractAnimal>();
         }
 
         public virtual string Feed(string eat, double foodWeigth)
@@ -39,16 +39,17 @@ namespace OOP.Animal
             }
             else
             {
-                result = $"{Name} ate {foodWeigth} kq of {eat};
+                result = $"{Name} ate {foodWeigth} kq of {eat}";
             }
+
             return result;
         }
         
         public virtual Message ToSound => new Message()
         {
             Text = $"{Name} makes a sound {Sound}",
-            Name = Name,
-            MessageType = MessageType.Play,
+            SenderName = Name,
+            MessageType = (TypeOfMessage)MessageType.Play
         }; 
     }
 }

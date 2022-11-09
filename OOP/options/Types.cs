@@ -6,7 +6,9 @@
         Forest,
         Deserts,
         Savana,
-        Tropic
+        Tropic,
+        Field
+
     }
     public enum FoodType
     {
